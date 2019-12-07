@@ -22,18 +22,47 @@
                     {{ trans('global.dashboard') }}
                 </a>
             </li>
-            @can('user_management_access')
-                <li class="nav-item nav-dropdown">
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fa-fw fas fa-users"></i>
+                    <p>
+                        {{ trans('cruds.userManagement.title') }}
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="pages/charts/chartjs.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>ChartJS</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/charts/flot.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Flot</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/charts/inline.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Inline</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @can('user-list')
+                <li class="nav-item has-treeview">
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
 
                         </i>
-                        {{ trans('cruds.userManagement.title') }}
+
                     </a>
                     <ul class="nav-dropdown-items">
-                        @can('permission_access')
+                        @can('user-list')
                             <li class="nav-item">
-                                <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
+                                <a href="" class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
                                     <i class="fa-fw fas fa-unlock-alt nav-icon">
 
                                     </i>
@@ -43,7 +72,7 @@
                         @endcan
                         @can('role_access')
                             <li class="nav-item">
-                                <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
+                                <a href="" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                                     <i class="fa-fw fas fa-briefcase nav-icon">
 
                                     </i>
@@ -51,9 +80,9 @@
                                 </a>
                             </li>
                         @endcan
-                        @can('user_access')
+                        @can('user-list')
                             <li class="nav-item">
-                                <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
+                                <a href="" class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
                                     <i class="fa-fw fas fa-user nav-icon">
 
                                     </i>
