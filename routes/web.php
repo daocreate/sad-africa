@@ -16,8 +16,8 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-Route::prefix('admin')->namespace('Back')->group(function () {
-    Route::name('admin')->get('/', 'AdminController@index');
+Route::get('/admin1', function () {
+    return view('backend.index');
 });
 Route::get('/home', 'HomeController@index')->name('home');
 
