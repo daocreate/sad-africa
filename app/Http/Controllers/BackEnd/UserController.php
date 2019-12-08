@@ -25,13 +25,13 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id','DESC')->get();
-        return view('BackEnd.users.index',compact('data'));
+        return view('backend.users.index',compact('data'));
     }
 
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
-        return view('BackEnd.users.create',compact('roles'));
+        return view('backend.users.create',compact('roles'));
     }
     /**
      * Store a newly created resource in storage.
@@ -71,7 +71,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('BackEnd.users.show',compact('user'));
+        return view('backend.users.show',compact('user'));
     }
 
 
@@ -88,7 +88,7 @@ class UserController extends Controller
         $userRole = $user->roles->pluck('name','name')->all();
 
 
-        return view('BackEnd.users.edit',compact('user','roles','userRole'));
+        return view('backend.users.edit',compact('user','roles','userRole'));
     }
 
 
