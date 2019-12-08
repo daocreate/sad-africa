@@ -54,12 +54,18 @@
                             <input data-id="{{$user->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $user->state ? 'checked' : '' }} >
                         </td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">{{ __('show') }}</a>
+                            <a class="btn btn-info" href="{{ route('users.show',$user->id) }}" title="{{ __('show') }}"><i class="fa fa-eye"></i> </a>
                             @hasrole('admin')
-                                <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">{{ __('edit') }}</a>
-                                {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit(__('delete') , ['class' => 'btn btn-danger']) !!}
-                                {!! Form::close() !!}
+                                <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}"  title="{{ __('edit') }}"><i class="fa fa-edit"></i></a>
+                            <div class="btn-group">
+                                <form  class="myAction" method="POST" action="{{URL::route('users.destroy', $user->id)}}">
+                                    @csrf
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <button type="submit" class="btn btn-danger " title="{{ __('delete') }}">
+                                        <i class="fa fa-fw fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
                             @endhasrole
                         </td>
                     </tr>
