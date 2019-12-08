@@ -8,15 +8,13 @@
 @extends('backend.layout')
 
 @section('main')
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Role Management</h2>
-            </div>
-            <div class="pull-right">
-                @can('admin')
+                @can('role-create')
                     <a class="btn btn-success" href="{{ route('roles.create') }}"> {{ __('create_role') }}</a>
                 @endcan
+
             </div>
         </div>
     </div>

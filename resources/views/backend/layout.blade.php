@@ -12,6 +12,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>Dasboard</title>
     <!-- AdminLTE Skins. -->
         @yield('css')
+<!-- switch -->
+    <link rel="stylesheet" href="{{asset('adminlte/css/bootstrap-switch.min.css')}}">
+    <!-- select -->
+    <link rel="stylesheet" href="{{asset('adminlte/select2/css/select2.min.css')}}">
     <!--data table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!-- Font Awesome Icons -->
@@ -113,11 +117,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 @yield('js')
 <script src="{{asset('adminlte/js/adminlte.min.js')}}"></script>
 <!--data table -->
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<!--select2 -->
+<script src="{{asset('adminlte/select2/js/select2.js')}}"></script>
+<!--switch -->
+<script src="{{asset('adminlte/js/bootstrap-switch.min.js')}}"></script>
 <script>
     $(document).ready( function () {
         $('#myTab').DataTable()
     });
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
 </script>
+
 </body>
 </html>

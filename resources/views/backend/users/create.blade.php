@@ -59,11 +59,11 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Role:</strong>
-                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control select2 select','multiple')) !!}
+                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control js-example-basic-multiple','multiple', 'name' => '')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="main_btn">{{__('submit')}}</button>
+            <button type="submit" class="btn btn-success">{{__('submit')}}</button>
         </div>
     </div>
     {!! Form::close() !!}

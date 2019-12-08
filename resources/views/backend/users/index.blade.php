@@ -12,7 +12,9 @@
             <div class="row mb-3">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2>Users Management</h2>
+                        @can('user-create')
+                            <a class="btn btn-success" href="{{ route('users.create') }}">{{__('new')}}</a>
+                        @endcan
                     </div>
 
                 </div>
