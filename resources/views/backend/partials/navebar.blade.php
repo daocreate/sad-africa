@@ -24,8 +24,50 @@
         </div>
     </form>
 
+
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-user"></i>
+                <span class="hidden-xs">{{auth()->user()->name}}</span><i class="caret"></i>
+            </a>
+
+            <ul class="dropdown-menu">
+                <!-- Menu Body -->
+                <li class="user-body">
+                    <div class="col-xs-6 text-center">
+                        <a href=""> {{--{{ URL::route('profile') }} --}}
+                            <div><i class="fa fa-briefcase"></i></div>
+                            Profile
+                        </a>
+                    </div>
+                    <div class="col-xs-6 text-center password">
+                        <a href=""> {{-- {{ URL::route('change_password') }} --}}
+                            <div><i class="fa fa-lock"></i></div>
+                            Password
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                    <div class="col-xs-6 text-center">
+                        <a href="{{ route('logout') }}">
+                            <div><i class="fa fa-power-off"></i></div>
+                            Log out
+                        </a>
+                    </div>
+                    <div class="col-xs-6 text-center password">
+                        <a href=""> {{-- {{ URL::route('lockscreen') }} --}}
+                            <div><i class="fa fa-eye-slash"></i></div>
+                            Lock Screen
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </li>
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">

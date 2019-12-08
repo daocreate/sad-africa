@@ -12,6 +12,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>Dasboard</title>
     <!-- AdminLTE Skins. -->
         @yield('css')
+    <!--data table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Ionicons -->
@@ -110,5 +112,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 @yield('js')
 <script src="{{asset('adminlte/js/adminlte.min.js')}}"></script>
+<!--data table -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+<script>
+    $(document).ready( function () {
+        $('#myTab').DataTable()
+    });
+</script>
 </body>
 </html>
