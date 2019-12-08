@@ -10,8 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function (){
+    return redirect('home');
+});
 Auth::routes();
+Route::get('profile', 'AvatarController@index')->middleware('auth')->name('profile.show');
+Route::resource('avatar','AvatarController')->middleware('auth');
 
 Route::get('/', function () {
     return view('welcome');

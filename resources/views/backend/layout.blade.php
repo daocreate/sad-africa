@@ -38,6 +38,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{asset('adminlte/plugins/summernote/summernote-bs4.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    {{-- full calendar --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+    <link rel="stylesheet" href="{{asset('adminlte/fullcalendar/fullcalendar.min.css')}}">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -122,6 +129,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('adminlte/select2/js/select2.js')}}"></script>
 <!--switch -->
 <script src="{{asset('adminlte/js/bootstrap-switch.min.js')}}"></script>
+<!-- fullcalendar -->
+<script src="{{asset('adminlte/fullcalendar/fullcalendar.min.js')}}"></script>
+<script src="{{asset('adminlte/fullcalendar/moment.min.js')}}"></script>
 <script>
     $(document).ready( function () {
         $('#myTab').DataTable()

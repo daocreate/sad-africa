@@ -16,7 +16,6 @@
             <li class="nav-item">
                 <a href="{{ route("backIndex") }}" class="nav-link active">
                     <i class="nav-icon fas fa-fw fa-tachometer-alt">
-
                     </i>
                     {{ trans('global.dashboard') }}
                 </a>
@@ -66,6 +65,12 @@
                     @endhasanyrole
 
                 </ul>
+            </li>
+            {{--event --}}
+            <li class=" nav-item">
+                <a class="nav-link" href="{{route('events.index')}}">
+                    <i class="nav-icon fas fa-calendar-alt"></i>
+                    {{__('events')}}</a>
             </li>
             {{--language --}}
             <li class="nav-item">
