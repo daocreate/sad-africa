@@ -150,9 +150,9 @@ return [
         /*
          * Package Service Providers...
          */
-        MercurySeries\Flashy\FlashyServiceProvider::class,
         /* Even Or Full Calendar */
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        MercurySeries\Flashy\FlashyServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -214,5 +214,6 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+        'Flashy' => MercurySeries\Flashy\Flashy::class,
     ],
 ];
