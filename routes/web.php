@@ -21,3 +21,13 @@ Route::get('/admin1', function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 
+//for language transcription
+Route::get('languages', 'LanguageTranslationController@index')->name('languages');
+Route::post('translations/update', 'LanguageTranslationController@transUpdate')->name('translation.update.json');
+Route::post('translations/updateKey', 'LanguageTranslationController@transUpdateKey')->name('translation.update.json.key');
+Route::delete('translations/destroy/{key}', 'LanguageTranslationController@destroy')->name('translations.destroy');
+Route::post('translations/create', 'LanguageTranslationController@store')->name('translations.create');
+Route::get('check-translation', function(){
+    \App::setLocale('fr');
+    dd(__('website'));
+});

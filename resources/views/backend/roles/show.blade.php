@@ -5,7 +5,7 @@
  * Date: 23/09/2019
  * Time: 21:27
  */?>
-@extends('BackEnd.layout')
+@extends('backend.layout')
 
 @section('main')
     <div class="row">
