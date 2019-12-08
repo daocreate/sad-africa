@@ -25,34 +25,34 @@
         </div>
     @endif
 
-    <table class="table table-striped table-bordered table-hover">
-        <tr>
-            <th>N°</th>
-            <th>{{__('name')}}</th>
-            <th width="280px">Action</th>
-        </tr>
-
-        @foreach ($roles as $key => $role)
+    <table class="table table-striped table-bordered table-hover" id="myTab">
+        <thead>
             <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $role->name }}</td>
-                <td>
-                    <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">{{ __('show') }}</a>
-                    @can('role-edit')
-                        <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">{{ __('edit') }}</a>
-                    @endcan
-                    @can('role-delete')
-                        {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-
-                        {!! Form::submit(_('delete'), ['class' => 'btn btn-danger']) !!}
-
-                        {!! Form::close() !!}
-                    @endcan
-                </td>
+                <th>{{__('name')}}</th>
+                <th width="280px">Action</th>
             </tr>
-        @endforeach
-    </table>
+        </thead>
 
-    {!! $roles->render() !!}
+        <tbody>
+            @foreach ($roles as $key => $role)
+                <tr>
+                    <td>{{ $role->name }}</td>
+                    <td>
+                        <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">{{ __('show') }}</a>
+                        @can('role-edit')
+                            <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">{{ __('edit') }}</a>
+                        @endcan
+                        @can('role-delete')
+                            {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
+
+                            {!! Form::submit(_('delete'), ['class' => 'btn btn-danger']) !!}
+
+                            {!! Form::close() !!}
+                        @endcan
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 @endsection
