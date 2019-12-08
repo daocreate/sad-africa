@@ -51,6 +51,10 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a href="{{route('languages')}}" class="nav-link">
+                    <i class="nav-icon fa fa-language"></i>{{__('language_trans')}}</a>
+            </li>
 
         </ul>
     </nav>
