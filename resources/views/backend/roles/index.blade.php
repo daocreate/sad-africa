@@ -38,16 +38,20 @@
                 <tr>
                     <td>{{ $role->name }}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">{{ __('show') }}</a>
+                        <a class="btn btn-info" href="{{ route('roles.show',$role->id) }} " title="{{ __('show') }}"><i class="fa fa-eye"></i> </a>
                         @can('role-edit')
-                            <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">{{ __('edit') }}</a>
+                            <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}" title="{{ __('edit') }}"><i class="fa fa-edit"></i> </a>
                         @endcan
                         @can('role-delete')
-                            {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-
-                            {!! Form::submit(_('delete'), ['class' => 'btn btn-danger']) !!}
-
-                            {!! Form::close() !!}
+                            <div class="btn-group">
+                                <form  class="myAction" method="POST" action="{{URL::route('roles.destroy', $role->id)}}">
+                                    @csrf
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <button type="submit" class="btn btn-danger " title="{{ __('delete') }}">
+                                        <i class="fa fa-fw fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
                         @endcan
                     </td>
                 </tr>
