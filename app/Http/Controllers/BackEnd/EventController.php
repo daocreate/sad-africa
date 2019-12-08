@@ -42,7 +42,6 @@ class EventController extends Controller
             );
         }
         $calendar = \Calendar::addEvents($event);
-        flashy()->success("$list $all $event_name ");
         return view('backend.events.index', compact('events', 'calendar'));
     }
 
