@@ -20,7 +20,6 @@ Route::get('/admin1', function () {
     return view('backend.index');
 });
 Route::get('/home', 'HomeController@index')->name('home');
-
 //for language transcription
 Route::get('languages', 'LanguageTranslationController@index')->name('languages');
 Route::post('translations/update', 'LanguageTranslationController@transUpdate')->name('translation.update.json');

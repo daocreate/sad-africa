@@ -12,8 +12,7 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
+            {{-- dashboard --}}
             <li class="nav-item">
                 <a href="{{ route("backIndex") }}" class="nav-link active">
                     <i class="nav-icon fas fa-fw fa-tachometer-alt">
@@ -22,6 +21,7 @@
                     {{ trans('global.dashboard') }}
                 </a>
             </li>
+            {{-- users management --}}
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fa-fw fas fa-users"></i>
@@ -32,7 +32,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/charts/chartjs.html" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fa-fw fas fa-unlock-alt nav-icon"></i>
                             <p>{{ trans('dao_custom.permission.title') }}</p>
                         </a>
@@ -51,6 +51,23 @@
                     </li>
                 </ul>
             </li>
+            {{-- formations management --}}
+            <li class=" nav-item has-treeview">
+                <a class="nav-link" href="#"><i class="nav-icon fas fa-graduation-cap"></i>{{__('formations')}}<i class="right fas fa-angle-left"></i></a>
+                <ul class="nav nav-treeview">
+                    @hasanyrole('admin|manager')
+
+                    <li >
+                        <a href="{{route('formations.index')}}" class="nav-link"><i class="nav-icon fas fa-graduation-cap "></i>{{__('formation')}} </a>
+                    </li>
+                    <li>
+                        <a href="{{route('categories.index')}}" class="nav-link"><i class="nav-icon fas fa-list"></i>{{__('category')}} </a>
+                    </li>
+                    @endhasanyrole
+
+                </ul>
+            </li>
+            {{--language --}}
             <li class="nav-item">
                 <a href="{{route('languages')}}" class="nav-link">
                     <i class="nav-icon fa fa-language"></i>{{__('language_trans')}}</a>

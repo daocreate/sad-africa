@@ -59,7 +59,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Role:</strong>
-                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control js-example-basic-multiple','multiple', 'name' => '')) !!}
+                {!! Form::select('roles[]', $roles,[], array( 'class' => 'form-control js-example-basic-multiple', 'multiple')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -68,4 +68,11 @@
     </div>
     {!! Form::close() !!}
 
+@endsection
+@section('js')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
 @endsection

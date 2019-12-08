@@ -42,7 +42,7 @@ class MyloginController extends Controller
     {
         auth()->logout();
         Flashy::info('Nous attendons votre retour ');
-        //return redirect(route('home'));
-        return view('FrontEnd.home');
+        return redirect(route('home'));
+        //return view('FrontEnd.home');
     }
 }
