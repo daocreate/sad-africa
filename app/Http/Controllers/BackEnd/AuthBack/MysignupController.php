@@ -24,7 +24,6 @@ class MysignupController extends Controller
             'password_confirmation'=>['required']
         ]);
 
-        Flashy::success("Bienvenue !");
         return redirect(route('backIndex'));
     }
 }

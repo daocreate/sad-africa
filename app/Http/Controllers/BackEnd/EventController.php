@@ -55,8 +55,8 @@ class EventController extends Controller
     {
         $event_name = trans('custum.event');
         $add  = trans('custum.add');
-        Flashy::info("$add $event_name");
-        return view('backend.events.create');
+
+        return view('backend.events.create')->with("success", "$add $event_name");
     }
 
     /**
@@ -141,8 +141,7 @@ class EventController extends Controller
         ]);
         $title = $request->input('title');
         $event->update($request->all());
-        Flashy::success("$event_name : $title  $update $successful");
-        return redirect()->route('events.index');
+        return redirect()->route('events.index')->with("success", "$event_name : $title  $update $successful");
     }
 
     /**

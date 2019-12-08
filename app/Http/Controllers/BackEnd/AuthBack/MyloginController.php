@@ -41,8 +41,7 @@ class MyloginController extends Controller
     public function getOut()
     {
         auth()->logout();
-        Flashy::info('Nous attendons votre retour ');
-        return redirect(route('home'));
+        return redirect(route('home'))->with("success", "Nous attendons votre retour");
         //return view('FrontEnd.home');
     }
 }
