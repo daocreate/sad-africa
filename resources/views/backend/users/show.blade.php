@@ -1,6 +1,6 @@
-@extends('BackEnd.layouts.base')
+@extends('backend.layout')
 
-@section('content')
+@section('main')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
