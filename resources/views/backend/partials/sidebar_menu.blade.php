@@ -52,7 +52,9 @@
             </li>
             {{-- formations management --}}
             <li class=" nav-item has-treeview">
-                <a class="nav-link" href="#"><i class="nav-icon fas fa-graduation-cap"></i>{{__('formations')}}<i class="right fas fa-angle-left"></i></a>
+                <a class="nav-link" href="#"><i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>{{__('formations')}}<i class="right fas fa-angle-left"></i></p>
+                </a>
                 <ul class="nav nav-treeview">
                     @hasanyrole('admin|manager')
 

@@ -14,16 +14,16 @@ Route::get('/', function (){
     return redirect('home');
 });
 Auth::routes();
+Route::get('/frontend', function () {
+    return view('frontend.home');
+});
 Route::get('profile', 'AvatarController@index')->middleware('auth')->name('profile.show');
 Route::resource('avatar','AvatarController')->middleware('auth');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/admin1', function () {
     return view('backend.index');
 });
-Route::get('/home', 'HomeController@index')->name('home');
+
 //for language transcription
 Route::get('languages', 'LanguageTranslationController@index')->name('languages');
 Route::post('translations/update', 'LanguageTranslationController@transUpdate')->name('translation.update.json');

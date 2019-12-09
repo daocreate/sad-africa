@@ -1,0 +1,1 @@
+@extends("FrontEnd.layouts.frontEndBase")
