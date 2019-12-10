@@ -18,7 +18,7 @@ class AvatarController extends Controller
     public function index()
     {
         $avatars = auth()->user()->getMedia('avatar');
-        return view('frontEnd.profile', compact('avatars') ,['user' => auth()->user()] );
+        return view('frontend.profile', compact('avatars') ,['user' => auth()->user()] );
     }
 
     /**
