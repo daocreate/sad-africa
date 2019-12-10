@@ -34,7 +34,7 @@ class FrontController extends Controller
         //$s = $request->input('s');
         $categories = Category::latest()->take(3)->get();
         $formations = Formation::latest()->take(3)->get();
-        return view("FrontEnd.layouts.frontEndBase", compact('formations','calendar', 'categories'));
+        return view("frontend.layouts.frontEndBase", compact('formations','calendar', 'categories'));
     }
     public function lang($locale)
     {
@@ -65,7 +65,7 @@ class FrontController extends Controller
         $formations = Formation::latest()
         ->search($s)->paginate(7);
         $categories = category::all();
-        return view('FrontEnd.courses.courses_index', compact('formations', 'categories', 's', 'calendar'));
+        return view('frontend.courses.courses_index', compact('formations', 'categories', 's', 'calendar'));
     }
     
 }
