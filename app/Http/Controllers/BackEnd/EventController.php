@@ -11,6 +11,10 @@ use MercurySeries\Flashy\Flashy;
 
 class EventController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
     /*function __construct()
     {
         $this->middleware('permission:event-list');

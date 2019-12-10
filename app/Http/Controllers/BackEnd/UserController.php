@@ -11,6 +11,11 @@ use DB;
 
 class UserController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:user-list');
+    }
     /*
      * change state of user
      */

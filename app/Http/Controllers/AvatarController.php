@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class AvatarController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,7 @@ class AvatarController extends Controller
     public function index()
     {
         $avatars = auth()->user()->getMedia('avatar');
-        return view('FrontEnd.profile', compact('avatars') ,['user' => auth()->user()] );
+        return view('frontEnd.profile', compact('avatars') ,['user' => auth()->user()] );
     }
 
     /**
