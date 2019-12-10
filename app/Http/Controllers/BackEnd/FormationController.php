@@ -18,6 +18,7 @@ class FormationController extends Controller
 
     function __construct()
     {
+        $this->middleware('auth');
         $this->middleware('permission:formation-list');
         $this->middleware('permission:formation-create', ['only' => ['create','store']]);
         $this->middleware('permission:formation-edit', ['only' => ['edit','update']]);
