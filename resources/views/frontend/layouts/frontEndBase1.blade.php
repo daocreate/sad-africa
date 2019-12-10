@@ -6,11 +6,11 @@
     <link rel="icon" href="{{ asset("frontEnd/img/favicon.png") }}" type="image/png">
 
     <title>SAD Africa </title>
-    @include("FrontEnd.layouts._fStyle")
+    @include("frontend.layouts._fStyle")
 </head>
 <body>
 
-@include("FrontEnd.layouts._menu")
+@include("frontend.layouts._menu")
 @yield('content')
 {{--<div class="container col-md-12">
     <div class="row col-sm-12">
@@ -131,10 +131,10 @@
 
 
 <!--================ start footer Area  =================-->
-@include('FrontEnd.layouts.footer')
+@include('frontend.layouts.footer')
 <!--================ End footer Area  =================-->
 
-@include("FrontEnd.layouts._fJsScript")
+@include("frontend.layouts._fJsScript")
 
 
 </body>

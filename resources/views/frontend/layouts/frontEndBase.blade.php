@@ -298,11 +298,11 @@
 <!--================End Latest Blog Area =================-->
 
 <!--================ start footer Area  =================-->
-@include('FrontEnd.layouts.footer')
+@include('frontend.layouts.footer')
 <!--================ End footer Area  =================-->
 
 
-@include("FrontEnd.layouts._fJsScript")
+@include("frontend.layouts._fJsScript")
 
 
 </body>
