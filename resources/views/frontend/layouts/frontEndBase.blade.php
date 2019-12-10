@@ -184,7 +184,7 @@
                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                         </ul>
-                        <p>Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.</p>
+                        <p>{{  $formation->category->description }}</p>
                     </div>
                 </div>
             @endforeach
@@ -301,9 +301,7 @@
 @include('frontend.layouts.footer')
 <!--================ End footer Area  =================-->
 
-
 @include("frontend.layouts._fJsScript")
-
 
 </body>
 </html>
