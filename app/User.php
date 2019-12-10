@@ -6,7 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\MediaLibrary\File;
 
 class User extends Authenticatable implements HasMedia
 {
@@ -31,4 +33,25 @@ class User extends Authenticatable implements HasMedia
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb')
+            ->width(70)
+            ->height(70)
+            ->sharpen(10);
+
+        $this->addMediaConversion('square')
+            ->width(150)
+            ->height(150)
+            ->sharpen(10);
+    }
+    public function registerMediaCollections()
+    {
+        $this
+            ->addMediaCollection('avatar')
+            ->acceptsFile(function (File $file) {
+                return $file->mimeType === 'image/jpeg';
+            })->singleFile();
+    }
+
 }
