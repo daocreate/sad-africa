@@ -24,20 +24,20 @@
             <div class="container">
                 <!--languege -->
                 <div class="float-right">
-                    <ul class="list header_social">
+                    <ul class="navbar-nav ml-auto">
                         @php $locale = session()->get('locale'); @endphp
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-2x fa-globe"></i>  <span class="caret"></span>
+                                @switch($locale)
+                                @case('fr')
+                                <img src="{{asset('img/fr.png')}}" width="30px" height="20x"> Fr
+                                @break
+                                @default
+                                <img src="{{asset('img/us.png')}}" width="30px" height="20x"> En
+                                @endswitch
+                                <span class="caret"></span>
                             </a>
-                            @switch($locale)
-                            @case('fr')
-                            <img src="{{asset('img/fr.png')}}" width="30px" height="20x"> Fr
-                            @break
-                            @default
-                            <img src="{{asset('img/us.png')}}" width="30px" height="20x"> En
-                            @endswitch
-                            <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="lang/en"><img src="{{asset('img/us.png')}}" width="30px" height="20x"> English</a>
                                 <a class="dropdown-item" href="lang/fr"><img src="{{asset('img/fr.png')}}" width="30px" height="20x"> French</a>
                             </div>
