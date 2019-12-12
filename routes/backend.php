@@ -10,6 +10,7 @@ Route::group(['middleware' => ['role:admin|manager']], function() {
     Route::resource('events', 'EventController');
     Route::resource('categories', 'CategoryController');
 });
+
 Route::get('/admin','BackEndController@index')->middleware('auth')->name("backIndex");
 Route::get('/login','AuthBack\MyloginController@login')->name("login");
 Route::post('/login','AuthBack\MyloginController@treatmentLogin')->name("tLogin");
@@ -20,3 +21,10 @@ Route::post('/signup','AuthBack\MysignupController@treatmentSignup')->name("tSin
 Route::get('/frontend', function () {
     return view('frontend.home');
 });
+//for language transcription
+Route::get('languages', 'LanguageTranslationController@index')->name('languages');
+Route::post('translations/update', 'LanguageTranslationController@transUpdate')->name('translation.update.json');
+Route::post('translations/updateKey', 'LanguageTranslationController@transUpdateKey')->name('translation.update.json.key');
+Route::delete('translations/destroy/{key}', 'LanguageTranslationController@destroy')->name('translations.destroy');
+Route::post('translations/create', 'LanguageTranslationController@store')->name('translations.create');
+Route::get('lang/{locale}', 'FrontController@lang');

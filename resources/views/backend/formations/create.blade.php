@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
-                        <select class="form-control category" name="category_id" >
+                        <select class="form-control category" name="category_id" value="{{ old('category_id') }}">
                             <option value="">{{ __('select_category')}}</option>
                         @foreach($categories as $category)
                             @if($category->state == 1)
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
-                        <select class="form-control former" name="former_id">
+                        <select class="form-control former" name="former_id" value="{{ old('former_id') }}">
                             <option value="">{{ __('select_former')}}</option>
                             @foreach($formers as $former)
                                 @if($former->state == 1)
@@ -61,26 +61,26 @@
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
                         <strong>Code:</strong>
-                        <input type="text" name="code" class="form-control" placeholder="code">
+                        <input type="text" name="code" class="form-control" placeholder="code" value="{{ old('code') }}">
                     </div>
                 </div>
 
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
                         <strong>Label:</strong>
-                        <input type="text" class="form-control"  name="label" placeholder="label">
+                        <input type="text" class="form-control"  name="label" placeholder="label" value="{{ old('label') }}">
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
                         <strong>Length:</strong>
-                        <input type="number" name="length" class="form-control" placeholder="length">
+                        <input type="number" name="length" class="form-control" placeholder="length" value="{{ old('length') }}">
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
                         <strong>@lang('dao_custum.description') :</strong>
-                        <input type="text" name="description" class="form-control" placeholder="description">
+                        <input type="text" name="description" class="form-control" placeholder="description" value="{{ old('description') }}">
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
-                    <input type="file" name="image" id="inputGroupFile04" >
+                    <input type="file" name="image" id="inputGroupFile04" value="{{ old('image') }}">
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-success">{{__('submit')}}</button>
