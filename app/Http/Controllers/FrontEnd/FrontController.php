@@ -14,7 +14,7 @@ class FrontController extends Controller
 {
     public function index() //Request $request
     {
-        $events = Event::all();
+        $events = Event::orderBy('id','DESC')->get();
         $event = [];
         foreach ($events as $row){
             $enddate = $row->end_date."24:00:00";
@@ -34,7 +34,7 @@ class FrontController extends Controller
         //$s = $request->input('s');
         $categories = Category::latest()->take(3)->get();
         $formations = Formation::latest()->take(3)->get();
-        return view("frontend.layouts.frontEndBase", compact('formations','calendar', 'categories'));
+        return view("frontend.layouts.frontEndBase", compact('formations','calendar', 'categories', 'events'));
     }
     public function lang($locale)
     {

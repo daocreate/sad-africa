@@ -29,9 +29,11 @@
             @endforeach
         </div>
         <div class=" main_title col-sm">
+
             <div class="container">
                 <h2>{{__('last')}} {{__('events')}}</h2>
                 <p class="mb-3"> Here list latest event and calendar</p><br>
+
                 <div class="jumbotron ">
                     <div class="row">
                         <div class="col-md-offset-2">
@@ -44,6 +46,21 @@
                         </div>
                     </div>
                 </div>
+                @foreach($events as $event)
+                    <div class="card text-center border-success mb-3" >
+                        <div class="card-header border-primary" style="background: {{ $event->color }}; color: white">
+                            {{ $event->title }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $event->start_date }}</h5>
+                            <p class="card-text">{{ $event->description }}</p>
+
+                        </div>
+                        <div class="card-footer text-muted">
+                            2 days ago
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
         </div>
