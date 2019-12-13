@@ -23,7 +23,7 @@ class CreateFormationsTable extends Migration
             $table->string('code', 10);
             $table->integer('length');
             $table->string('label');
-            $table->integer('state')->default(1);
+            $table->tinyInteger('state')->default(1);
             $table->text('description');
             $table->timestamps();
             $table->integer('former_id');

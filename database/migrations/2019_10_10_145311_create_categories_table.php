@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('description');
-            $table->integer('state')->default(1);
+            $table->tinyInteger('state')->default(1);
             $table->timestamps();
         });
     }
