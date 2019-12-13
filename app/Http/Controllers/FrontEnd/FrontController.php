@@ -6,8 +6,10 @@ use App\Category;
 use App\Formation;
 use App\Event;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
+
 
 
 class FrontController extends Controller
@@ -31,10 +33,11 @@ class FrontController extends Controller
         }
         $calendar = \Calendar::addEvents($event);
 
+        $carbon = Carbon::now()->subMinutes(2)->diffForHumans();
         //$s = $request->input('s');
         $categories = Category::latest()->take(3)->get();
         $formations = Formation::latest()->take(3)->get();
-        return view("frontend.layouts.frontEndBase", compact('formations','calendar', 'categories', 'events'));
+        return view("frontend.layouts.frontEndBase", compact('formations','calendar', 'categories', 'events', 'carbon'));
     }
     public function lang($locale)
     {

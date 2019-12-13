@@ -46,18 +46,34 @@
                         </div>
                     </div>
                 </div>
-                @foreach($events as $event)
+                {{-- Swich carbon language --}}
+                @php $locale = session()->get('locale'); @endphp
+                @switch($locale)
+                @case('fr')
+                    {{ \Carbon\Carbon::setLocale('fr') }}
+                @break
+                @default
+                    {{ \Carbon\Carbon::setLocale('en') }}
+                @endswitch
+                {{-- End Swich carbon language --}}
+
+            @foreach($events as $event)
                     <div class="card text-center border-success mb-3" >
                         <div class="card-header border-primary" style="background: {{ $event->color }}; color: white">
-                            {{ $event->title }}
+                            <h3><strong>{{ $event->title }}</strong></h3>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $event->start_date }}</h5>
+
+                            <h5 class="card-title"><strong>{{__('start')}}</strong>
+                                {{--{{  \Carbon\Carbon::parse($event->start_date)->formatLocalized("%d %B %Y à %Hh%M") }}<br/>--}}
+                                {{ Carbon\Carbon::parse($event->end_date)->format('d M  Y H:h') }}
+                            </h5>
                             <p class="card-text">{{ $event->description }}</p>
 
                         </div>
                         <div class="card-footer text-muted">
-                            2 days ago
+
+                            <h5 class="card-title">{{ \Carbon\Carbon::parse($event->start_date)->diffForHumans()}}</h5>
                         </div>
                     </div>
                 @endforeach
