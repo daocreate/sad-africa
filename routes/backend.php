@@ -14,7 +14,8 @@ Route::group(['middleware' => ['role:admin|manager']], function() {
 Route::get('/admin','BackEndController@index')->middleware('auth')->name("backIndex");
 Route::get('/login','AuthBack\MyloginController@login')->name("login");
 Route::post('/login','AuthBack\MyloginController@treatmentLogin')->name("tLogin");
-Route::get('/logout','AuthBack\MyloginController@getOut')->name("logout");
+Route::get('/logou1t','AuthBack\MyloginController@getOut')->name("logout");
+Route::get('/logout','AuthBack\MyloginController@logout')->name("logoutT");
 Route::get('/signup','AuthBack\MysignupController@signup')->name("singup");
 Route::post('/signup','AuthBack\MysignupController@treatmentSignup')->name("tSingup");
 //Route::get('/addUser','BackController@addUser');

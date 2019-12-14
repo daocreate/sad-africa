@@ -38,10 +38,10 @@ class MyloginController extends Controller
         ]);
     }
 
-    public function getOut()
+    public function logout()
     {
         auth()->logout();
         return redirect(route('home'))->with("success", "Nous attendons votre retour");
-        //return view('FrontEnd.home');
+        //dd("test");
     }
 }

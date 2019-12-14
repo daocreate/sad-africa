@@ -44,7 +44,7 @@
                         </a>
                     </div>
                     <div class="col-xs-6 text-center password">
-                        <a href=""> {{-- {{ URL::route('change_password') }} --}}
+                        <a href=""> 
                             <div><i class="fa fa-lock"></i></div>
                             Password
                         </a>
@@ -54,13 +54,13 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                     <div class="col-xs-6 text-center">
-                        <a href="{{ route('logout') }}">
+                        <a href="{{ route('logoutT') }}">
                             <div><i class="fa fa-power-off"></i></div>
                             Log out
                         </a>
                     </div>
                     <div class="col-xs-6 text-center password">
-                        <a href=""> {{-- {{ URL::route('lockscreen') }} --}}
+                        <a href="">
                             <div><i class="fa fa-eye-slash"></i></div>
                             Lock Screen
                         </a>
