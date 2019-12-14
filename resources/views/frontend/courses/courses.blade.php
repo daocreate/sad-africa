@@ -64,16 +64,20 @@
                         </div>
                         <div class="card-body">
 
-                            <h5 class="card-title"><strong>{{__('start')}}</strong>
+                            <h5 class="card-title text-success"><strong>{{__('start')}} : </strong>
                                 {{--{{  \Carbon\Carbon::parse($event->start_date)->formatLocalized("%d %B %Y à %Hh%M") }}<br/>--}}
+                                {{ Carbon\Carbon::parse($event->start_date)->format('d M  Y H:h') }}
+                            </h5>
+                            <h5 class="card-title text-danger"><strong>{{__('end')}} : </strong>
+
                                 {{ Carbon\Carbon::parse($event->end_date)->format('d M  Y H:h') }}
                             </h5>
                             <p class="card-text">{{ $event->description }}</p>
 
                         </div>
                         <div class="card-footer text-muted">
-
-                            <h5 class="card-title">{{ \Carbon\Carbon::parse($event->start_date)->diffForHumans()}}</h5>
+                            <h5 class="card-title pull-left">{{ \Carbon\Carbon::parse($event->start_date)->diffForHumans()}}</h5>
+                            <h5 class="card-title pull-right text-danger" >{{ \Carbon\Carbon::parse($event->end_date)->diffForHumans()}}</h5>
                         </div>
                     </div>
                 @endforeach
