@@ -26,8 +26,6 @@ class CreateFormationsTable extends Migration
             $table->tinyInteger('state')->default(1);
             $table->text('description');
             $table->timestamps();
-            $table->integer('former_id');
-            $table->integer('category_id');
 
         });
     }
