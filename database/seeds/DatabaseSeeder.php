@@ -16,6 +16,24 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
+        echo 'seeding permission...', PHP_EOL;
+        $permissions = [
+            'role-list',
+            'role-create',
+            'role-edit',
+            'role-delete',
+            'formation-list',
+            'formation-create',
+            'formation-edit',
+            'formation-delete',
+            'user-list',
+            'user-create',
+            'user-edit',
+            'user-delete'
+        ];
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
         echo 'seeding users...', PHP_EOL;
 
         $user= User::create(
@@ -37,5 +55,8 @@ class DatabaseSeeder extends Seeder
         $user->assignRole('admin');
         $role = $user->assignRole('admin');
         $role->givepermissionTo(Permission::all());
+
+        \DB::table('languages')->insert(['name' => 'English', 'code' => 'en']);
+        \DB::table('languages')->insert(['name' => 'Français', 'code' => 'fr']);
     }
 }

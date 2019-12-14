@@ -14,6 +14,7 @@ class PermissionTableSeeder extends Seeder
      */
     public function run()
     {
+        echo 'seeding permission...', PHP_EOL;
        $permissions = [
            'role-list',
            'role-create',
@@ -28,7 +29,6 @@ class PermissionTableSeeder extends Seeder
            'user-edit',
            'user-delete'
         ];
-
 
         foreach ($permissions as $permission) {
              Permission::create(['name' => $permission]);
