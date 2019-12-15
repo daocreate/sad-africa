@@ -11,7 +11,7 @@ class MyloginController extends Controller
     public function login()
     {
         $title="Login";
-        return view('auth.login',compact('title'));
+        return view('backend.pages.login',compact('title'));
     }
 
     public function treatmentLogin()

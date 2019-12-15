@@ -7,8 +7,8 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="{{ asset("frontEnd/img/logo.png") }}" alt="LearnIT">
+                            <a href="{{route('home')}}" title="{{__('home')}}">
+                                <img src="{{ asset("frontEnd/img/logo.png") }}" alt="SAID Africa" style="height: 96px; width: 140px">
                             </a>
                         </div>
                         <div class="login-form">
@@ -32,7 +32,18 @@
                                         <p>{{ $errors->first('password') }}</p>
                                     </div>
                                 @endif
-                                <button class=" main_btn" type="submit">{{__('login')}}</button>
+                                <div class="form-group row">
+                                    <div class="col-md-6 offset-md-4">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class=" main_btn" type="submit">{{__('login')}}</button>
+                                </div>
                                 {{--<div class="social-login-content">
                                     <div class="social-button">
                                         <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
@@ -43,7 +54,7 @@
                             <div class="register-link">
                                 <p>
                                     Vous n'avez pas encore de compte?
-                                    <a href="{{ route("singup") }}">Créez en Ici</a>
+                                    <a href="{{ route("singup") }}">{{__('singup')}} {{__('here')}}</a>
                                 </p>
                             </div>
                         </div>

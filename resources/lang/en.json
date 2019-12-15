@@ -23,6 +23,7 @@
     "event": "Event",
     "formation": "Formation",
     "former": "Former",
+    "here": "Here",
     "home": "Home",
     "hour": "Hour(s)",
     "immovable": "Immovable",
@@ -67,5 +68,6 @@
     "users": "Users",
     "we_are_sorry": "We are sorry",
     "web_development": "Web Development",
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "you_have_account": "You have Accout!"
 }

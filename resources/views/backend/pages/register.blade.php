@@ -1,4 +1,4 @@
-@extends("BackEnd.layouts.base1")
+@extends("backend.layouts.base1")
 @section('title', 'Sign Up')
 @section("content")
     <div class="page-wrapper">
@@ -7,15 +7,15 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="{{ asset("frontEnd/img/logo.png") }}" alt="LearnIT">
+                            <a href="{{route('home')}}" title="{{__('home')}}">
+                                <img src="{{ asset("frontEnd/img/logo.png") }}" alt="SAID Africa" style="height: 96px; width: 140px">
                             </a>
                         </div>
                         <div class="login-form">
                             <form action=" {{ route('tSingup') }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Email Address</label>
+                                    <label>{{__('email')}}</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                                 </div>
                                 @if($errors->has('email'))
@@ -24,8 +24,8 @@
                                     </div>
                                 @endif
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <label>{{__('password')}}</label>
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password" {{ old('password') }}>
                                 </div>
                                 @if($errors->has('password'))
                                     <div class="alert alert-warning">
@@ -33,7 +33,7 @@
                                     </div>
                                 @endif
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <label>{{__('password')}} {{__('confirm')}}</label>
                                     <input class="au-input au-input--full" type="password" name="password_confirmation" placeholder=" Confirm Password">
                                 </div>
                                 @if($errors->has('password_confirmation'))
@@ -46,10 +46,10 @@
                                     <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar (optional)') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="avatar" type="file" class="form-control" name="avatar">
+                                        <input id="avatar" type="file" class="form-control" name="avatar" {{ old('avatar') }}>
                                     </div>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">M'inscrire</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">{{__('register')}}</button>
 
                                 {{--<div class="social-login-content">
                                     <div class="social-button">
@@ -59,8 +59,8 @@
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Vous avez un Compte!
-                                    <a href="{{ route("login") }}">Connecter vous Ici</a>
+                                    {{__('you_have_account')}}
+                                    <a href="{{ route("login") }}">{{__('login')}} {{__('here')}}</a>
                                 </p>
                             </div>
                         </div>

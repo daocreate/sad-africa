@@ -43,19 +43,7 @@
                             </div>
                         </li>
                     </ul>
-                    {{-- <div title="language" id="top_lang_links_wrapper">
-                        <div class="lang-toggle-button">
-                            <i class="fa fa-language"></i>
-                        </div>
-                        <div class="cws_lang_links">
-                            <a href="{{route('setLocale','fr')}}" class="cws_lang_link" title="Français">
-                                <i class="lang-icon flag-icon flag-icon-fr"></i>
-                            </a>
-                            <a href="{{route('setLocale','en')}}" class="cws_lang_link" title="English">
-                                <i class="lang-icon flag-icon flag-icon-gb"></i>
-                            </a>
-                        </div>
-                    </div>--}}
+
                 </div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="{{route('home')}}"><img src="{{ asset("frontEnd/img/logo.png") }}" alt="SAID Consulting" style="height: 76px; width: 140px"></a>

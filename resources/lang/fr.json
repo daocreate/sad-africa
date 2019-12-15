@@ -24,6 +24,7 @@
     "event": "Evènement",
     "formation": "Formation",
     "former": "Formateur",
+    "here": "Ici",
     "home": "Acceuil",
     "hour": "Heure(s)",
     "immovable": "Immobilier",
@@ -68,5 +69,6 @@
     "users": "Utilisateurs",
     "we_are_sorry": "Nous sommes désolé",
     "web_development": "Développement Web",
-    "welcome": "Bienvenue"
+    "welcome": "Bienvenue",
+    "you_have_account": "Vous avez un Compte!"
 }

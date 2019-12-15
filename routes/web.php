@@ -13,7 +13,9 @@
 Route::get('/', function (){
     return redirect('home');
 });
-Auth::routes();
+
+//Auth::routes();
+
 Route::get('/frontend', function () {
     return view('frontend.home');
 });
