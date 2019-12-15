@@ -15,6 +15,7 @@ Route::get('/admin','BackEndController@index')->middleware('auth')->name("backIn
 Route::get('/login','AuthBack\MyloginController@login')->name("login");
 Route::post('/login','AuthBack\MyloginController@treatmentLogin')->name("tLogin");
 Route::get('/logout','AuthBack\MyloginController@getOut')->name("logout");
+Route::get('/logout','AuthBack\MyloginController@getOut1')->name("logout1");
 Route::get('/signup','AuthBack\MysignupController@signup')->name("singup");
 Route::post('/signup','AuthBack\MysignupController@treatmentSignup')->name("tSingup");
 //Route::get('/addUser','BackController@addUser');

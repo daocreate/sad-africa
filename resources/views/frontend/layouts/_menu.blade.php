@@ -107,7 +107,7 @@
                                     @if( auth()->user()->hasRole('admin') || auth()->user()->hasRole('manager'))
                                         <li class="nav-item"><a class="nav-link" href="{{ route("backIndex") }}">{{__('backend')}}</a></li>
                                     @endif
-                                    <li class="nav-item"><a class="nav-link" href="{{ route("logout") }}">{{__('logout')}}</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route("logout1") }}">{{__('logout')}}</a></li>
                                 </ul>
                             @else
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('login')}}</a>

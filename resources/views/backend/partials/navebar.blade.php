@@ -54,9 +54,9 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                     <div class="col-xs-6 text-center">
-                        <a href="{{ route('logout') }}">
+                        <a href="{{ route('logout1') }}">
                             <div><i class="fa fa-power-off"></i></div>
-                            Log out
+                            {{__('logout')}}
                         </a>
                     </div>
                     <div class="col-xs-6 text-center password">
