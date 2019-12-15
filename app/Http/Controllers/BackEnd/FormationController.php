@@ -93,7 +93,9 @@ class FormationController extends Controller
      */
     public function edit(formation $formation)
     {
-        return view('backend.formations.edit',compact('formation'));
+        $formers = user::role('former')->get();
+        $categories = category::all();
+        return view('backend.formations.edit',compact('formation', 'categories', 'formers'));
     }
 
     /**
@@ -110,7 +112,6 @@ class FormationController extends Controller
             'label' => 'required',
             'length' =>'required',
             'category_id' => 'required',
-            'user_id' => 'required',
             'former_id' => 'required',
             'description' => 'required',
         ]);

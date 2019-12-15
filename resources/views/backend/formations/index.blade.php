@@ -32,10 +32,12 @@
                         <th>{{__('code')}}</th>
                         <th>{{__('label')}}</th>
                         <th>{{__('length')}}</th>
+                        <th width="auto">{{__('Category')}}</th>
+                        <th>{{__('former')}}</th>
                         <th>{{__('description')}}</th>
-                        <th>{{__('state')}}</th>
+                        <th width="auto">{{__('state')}}</th>
                         <th>{{__('Image')}}</th>
-                        <th width="300px">{{__('action')}}</th>
+                        <th width="150px">{{__('action')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +46,8 @@
                         <td>{{ $formation->code }}</td>
                         <td>{{ $formation->label }}</td>
                         <td>{{ $formation->length }}</td>
+                        <td>{{ $formation->category->name }}</td>
+                        <td>{{ $formation->former->name }}</td>
                         <td>{{ $formation->description }}</td>
                         <td>
                             <input class="statusChange" type="checkbox" data-pk="{{$formation->id}}" @if($formation->state) checked @endif data-toggle="toggle" data-on="<i class='fa fa-check-circle'></i>" data-off="<i class='fa fa-ban'></i>" data-onstyle="success" data-offstyle="danger">
@@ -78,7 +82,7 @@
                     <th>{{__('description')}}</th>
                     <th>{{__('state')}}</th>
                     <th>{{__('Image')}}</th>
-                    <th width="300px">{{__('action')}}</th>
+                    <th width="150px">{{__('action')}}</th>
                 </tr>
             </table>
         {{--

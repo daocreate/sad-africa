@@ -86,7 +86,7 @@
 <!--================End Finance Area =================-->
 
 <!--================Courses Area =================-->
-<section class="courses_area p_120">
+<section class="courses_area ">
 
     @include('frontend.courses.courses')
 </section>

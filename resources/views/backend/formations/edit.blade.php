@@ -34,43 +34,76 @@
     <form action="{{ route('formations.update',$formation->id) }}" method="POST">
         @csrf
         @method('PUT')
-
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-4 col-sm-4 col-md-4">
                 <div class="form-group">
-                    <strong>Code:</strong>
-                    <input type="text" name="code" value="{{ $formation->code }}" class="form-control" placeholder="Code">
+                    <select class="form-control category" name="category_id" value="{{ $formation->category_id }}">
+                        <option value="{{$formation->category_id}}">{{$formation->category->name }}</option>
+                        @foreach($categories as $category)
+                            @if($category->state == 1)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>@endif
+                        @endforeach
+                    </select>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-4 col-sm-4 col-md-4">
                 <div class="form-group">
-                    <strong>Label:</strong>
-                    <textarea class="form-control" style="height:150px" name="label" placeholder="Detail">{{ $formation->label }}</textarea>
+                    <select class="form-control former" name="former_id" value="{{ $formation->former->name}}">
+                        <option value="{{ $formation->former_id}}">{{ $formation->former->name}}</option>
+                        @foreach($formers as $former)
+                            @if($former->state == 1)
+                                <option value="{{ $former->id }}">{{ $former->name }}</option>@endif
+                        @endforeach
+                    </select>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Length:</strong>
-                    <textarea class="form-control" style="height:150px" name="length" placeholder="Length">{{ $formation->length }}</textarea>
-                </div>
+
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>{{__('code')}}:</strong>
+                <input type="text" name="code" class="form-control" placeholder="code" value="{{ $formation->code }}">
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>State:</strong>
-                    <textarea class="form-control" style="height:150px" name="state" placeholder="Detail">{{ $formation->state }}</textarea>
-                </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>{{__('label')}}:</strong>
+                <input type="text" name="label" class="form-control" placeholder="label" value="{{ $formation->label }}">
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $formation->description }}</textarea>
-                </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>{{__('length')}}:</strong>
+                <input type="number" name="length" class="form-control" placeholder="label" value="{{ $formation->length }}">
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>{{__('state')}}:</strong>
+                <input type="number" name="state" class="form-control" placeholder="state" value="{{ $formation->state }}">
             </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>{{__('description')}}:</strong>
+                <input type="text" name="description" class="form-control" placeholder="description" value="{{ $formation->description }}">
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 text-center">
+            <button type="submit" class="btn btn-outline-success">{{__('update')}}</button>
         </div>
 
     </form>
 
+@endsection
+@section('js')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.category').select2();
+        });
+        $(document).ready(function() {
+            $('.former').select2();
+        });
+    </script>
 @endsection

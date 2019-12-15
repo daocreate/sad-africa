@@ -89,5 +89,6 @@ return [
     "users"=> "Utilisateurs",
     "we_are_sorry"=> "Nous sommes désolé",
     "web_development"=> "Développement Web",
-    "welcome"=> "Bienvenue"
+    "welcome"=> "Bienvenue",
+    "email_no_available" => "cette adresse mail n'est plus disponible"
 ];

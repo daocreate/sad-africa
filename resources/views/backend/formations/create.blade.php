@@ -60,26 +60,26 @@
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
-                        <strong>Code:</strong>
+                        <strong>{{__('code')}}:</strong>
                         <input type="text" name="code" class="form-control" placeholder="code" value="{{ old('code') }}">
                     </div>
                 </div>
 
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
-                        <strong>Label:</strong>
+                        <strong>{{__('label')}}:</strong>
                         <input type="text" class="form-control"  name="label" placeholder="label" value="{{ old('label') }}">
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
-                        <strong>Length:</strong>
+                        <strong>{{__('length')}}:</strong>
                         <input type="number" name="length" class="form-control" placeholder="length" value="{{ old('length') }}">
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <div class="form-group">
-                        <strong>@lang('dao_custum.description') :</strong>
+                        <strong>{{__('description')}} :</strong>
                         <input type="text" name="description" class="form-control" placeholder="description" value="{{ old('description') }}">
                     </div>
                 </div>

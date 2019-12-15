@@ -6,23 +6,6 @@
  */
 .avatar1 {  width: 50px;  height:50px; float:left; border-radius:50%; margin-right:5px; }
 .header_event{ background: #5BC01E; color: white}
-/*
-*custum calendar
- */
-.fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active {
-    background-color: #5BC01E;
-}
-.fc-button-primary:disabled {
-    color: #fff;
-    background-color: #2C3E50;
-    border-color: #2C3E50;
-}
-.fc-head-container, .fc-ltr, .fc-unthemed .fc-widget-header, .fc-row, .fc-widget-header, .fc-toolbar, .fc-header-toolbar{
-    background-color: #fff;
-}
-.fc-state-default{
-    background-color: #FAEE30;
-}
 
 /*
 class="fc-left"> class="fc-prev-button fc-button fc-button-primary" fc-icon fc-icon-chevron-left"></span></button><button type="button" class="fc-next-button fc-button fc-button-primary"

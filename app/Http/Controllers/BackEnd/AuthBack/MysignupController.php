@@ -25,6 +25,9 @@ class MysignupController extends Controller
             'password'=>['required','confirmed'],
             'password_confirmation'=>['required']
         ]);
+
+        $email_error = trans('dao_custum.email_no_available');
+
         $user=new User();
         $user->name=\request("nom");
         $user->email=\request("email");
@@ -32,7 +35,7 @@ class MysignupController extends Controller
         try{
             $user->save();
         } catch (\Illuminate\Database\QueryException $exception){
-            session()->flash('exist_email',"cette adresse mail n'est plus disponible");
+            session()->flash('exist_email',"$email_error");
             return back()->withInput();
         }
 
