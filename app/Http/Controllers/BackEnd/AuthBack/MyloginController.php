@@ -4,7 +4,7 @@ namespace App\Http\Controllers\BackEnd\AuthBack;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use MercurySeries\Flashy\Flashy;
+//use MercurySeries\Flashy\Flashy;
 
 class MyloginController extends Controller
 {
@@ -28,7 +28,7 @@ class MyloginController extends Controller
             if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('manager')){
                 return redirect(route('backIndex'));
             }else{
-                Flashy::info('Heureux de vous revoir ');
+               // Flashy::info('Heureux de vous revoir ');
                 return redirect(route('home'));
             }
         }

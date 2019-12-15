@@ -15,7 +15,7 @@
                             <form action=" {{ route('tSingup') }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label>{{__('email')}}</label>
+                                    {{--<label>{{__('email')}}</label>--}}
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                                 </div>
                                 @if($errors->has('email'))
@@ -23,8 +23,22 @@
                                         <p>{{ $errors->first('email') }}</p>
                                     </div>
                                 @endif
+                                @if(Session::has('exist_email'))
+                                    <div class="alert alert-warning">
+                                        <p> {{ Session::get('exist_email') }} </p>
+                                    </div>
+                                @endif
                                 <div class="form-group">
-                                    <label>{{__('password')}}</label>
+                                    {{--<label>Nom*</label>--}}
+                                    <input class="au-input au-input--full" type="text" name="nom" placeholder="Nom" value="{{ old('nom') }}">
+                                </div>
+                                @if($errors->has('nom'))
+                                    <div class="alert alert-warning">
+                                        <p>{{ $errors->first('nom') }}</p>
+                                    </div>
+                                @endif
+                                <div class="form-group">
+                                    {{--<label>{{__('password')}}</label>--}}
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password" {{ old('password') }}>
                                 </div>
                                 @if($errors->has('password'))
@@ -33,7 +47,7 @@
                                     </div>
                                 @endif
                                 <div class="form-group">
-                                    <label>{{__('password')}} {{__('confirm')}}</label>
+                                    {{--<label>{{__('password')}} {{__('confirm')}}</label>--}}
                                     <input class="au-input au-input--full" type="password" name="password_confirmation" placeholder=" Confirm Password">
                                 </div>
                                 @if($errors->has('password_confirmation'))
