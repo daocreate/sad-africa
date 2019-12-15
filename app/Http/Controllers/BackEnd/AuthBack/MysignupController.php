@@ -12,7 +12,7 @@ class MysignupController extends Controller
     public function signup()
     {
         $title="Sign Up";
-        return view('BackEnd.pages.register',compact('title'));
+        return view('backend.pages.register',compact('title'));
     }
 
     public function treatmentSignup()
