@@ -5,16 +5,16 @@
             <div class="float-left">
                 <ul class="list header_social">
                     <li><a href="facebook.com/sad-africa" title="facebook" target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
-                    <li><a href="twiter.com/sad-africa" title="twiter" target="_blank><i class="fa fa-2x fa-twitter"></i></a></li>
+                    <li><a href="twiter.com/sad-africa" title="twiter" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>
                   <!--  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     <li><a href="#"><i class="fa fa-behance"></i></a></li>
                     -->
                 </ul>
             </div>
             <div class="float-right">
-                <a class="dn_btn" href="#"><i class="fa fa-2x fa-map-marker"></i> {{__('site')}} </a>
-                <a class="dn_btn" href="tel:+237671447937"><i class="fa fa-2x fa-phone"></i> {{__('sad_tel')}}</a>
-                <a class="dn_btn" href="sad_africa@gmail.com"><i class="fa fa-2x fa-envelope"></i> {{__('sad_email')}}</a>
+                <a class="dn_btn" href="#" title="{{__('location')}}"><i class="fa fa-2x fa-map-marker"></i> {{__('site')}} </a>
+                <a class="dn_btn" href="tel:+237671447937" title="{{__('phone')}}"><i class="fa fa-2x fa-phone"></i> {{__('sad_tel')}}</a>
+                <a class="dn_btn" href="sad_africa@gmail.com" title="{{__('email')}}"><i class="fa fa-2x fa-envelope"></i> {{__('sad_email')}}</a>
             </div>
         </div>
     </div>

@@ -17,7 +17,6 @@
 <script src="{{ asset("frontEnd/js/theme.js") }}"></script>
 <!-- Main JS-->
 <script src="{{ asset('admin/js/main.js') }}"></script>
-<link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}">
 {{-- bootstrap switch--}}
 <script src="{{ asset('admin/vendor/bootstrap-switch/js/bootstrap-switch.js') }}"></script>
 
