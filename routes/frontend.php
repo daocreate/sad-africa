@@ -8,3 +8,8 @@ Route::get('check-translation', function(){
     \Carbon\Carbon::setLocale('fr');
     dd(__('website'));
 });
+Route::group(['middleware' => ['role:learner']], function() {
+    Route::get('/learner','LearnerController@index')->name("learner");
+    Route::get('/inscription','LearnerController@inscription')->name("inscription");
+
+});

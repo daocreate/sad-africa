@@ -1,7 +1,7 @@
-@extends('FrontEnd.layouts.frontEndBase1')
+@extends('frontend.layouts.frontEndBase1')
 @section('content')
     <div class="container mb-5">
-        <div class="main_title">
+        <div class="content">
             @php $locale = session()->get('locale'); @endphp
             @if($locale == 'fr')
             <h2>{{__('all')}} (es) {{__('courses')}}</h2>

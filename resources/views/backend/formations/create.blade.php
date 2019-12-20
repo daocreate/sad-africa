@@ -89,7 +89,10 @@
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
-                    <input type="file" name="image" id="inputGroupFile04" value="{{ old('image') }}">
+                    <div class="form-group">
+                        <strong>{{__('image')}}:</strong>
+                        <input type="file" name="image" id="inputGroupFile04" value="{{ old('image') }}">
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-success">{{__('submit')}}</button>

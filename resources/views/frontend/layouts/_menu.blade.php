@@ -91,11 +91,14 @@
                             </a>
                            {{-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>--}}
                                 <ul class="dropdown-menu">
-                                     <li class="nav-item"><a class="nav-link" href="{{ route("profile.show") }}">{{__('user_profile')}}</a></li>
+                                     <li class="nav-item"><a class="nav-link" href="{{ route("profile.show") }}"><i class="fa-2x fa fa-briefcase"></i> {{__('user_profile')}}</a></li>
                                     @if( auth()->user()->hasRole('admin') || auth()->user()->hasRole('manager'))
-                                        <li class="nav-item"><a class="nav-link" href="{{ route("backIndex") }}">{{__('backend')}}</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route("backIndex") }}"><i class="fa-2x fa fa-lock"></i> {{__('backend')}}</a></li>
                                     @endif
-                                    <li class="nav-item"><a class="nav-link" href="{{ route("logout1") }}">{{__('logout')}}</a></li>
+                                    @if( auth()->user()->hasRole('learner'))
+                                        <li class="nav-item"><a class="nav-link" href="{{ route("learner") }}"><i class="fa-2x fa fa-lock"></i> {{__('dashboard')}}</a></li>
+                                    @endif
+                                    <li class="nav-item"><a class="nav-link" href="{{ route("logout1") }}"><i class="fa-2x fa fa-power-off"></i>  {{__('logout')}}</a></li>
                                 </ul>
                             @else
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('login')}}</a>

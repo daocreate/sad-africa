@@ -21,8 +21,9 @@
                             <ul class="list list-group-horizontal">
                                 <li><a href="#"><i class="lnr lnr-bubble"></i> 35</a></li>
                                 <li><a href="#" style="color: #5BC01E"><i class="lnr lnr-user"></i> {{__('former')}} : {{ $formation->former->name }}</a></li>
-                                <p class="card-text float-right"><small class="text-muted ">{{ $formation->updated_at }}</small></p>
                             </ul>
+                            <p class="card-text float-right"><small class="text-muted ">{{ $formation->updated_at }}</small></p>
+                            <a class="main_btn" href="{{ route('learner') }}">{{ __('inscription') }}</a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +61,7 @@
             @foreach($events as $event)
                     <div class="card text-center border-success mb-3" >
                         <div class="card-header border-primary" style="background: {{ $event->color }}; color: white">
-                            <h3><strong>{{ $event->title }}</strong></h3>
+                            <h4><strong>{{ $event->title }}</strong></h4>
                         </div>
                         <div class="card-body">
 

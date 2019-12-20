@@ -59,7 +59,7 @@
                 <div class="finance_item">
                     <div class="media">
                         <div class="d-flex">
-                            <i class="fa fa-microchip" aria-hidden="true"></i>
+                            <i class="fa fa-code" aria-hidden="true"></i>
                         </div>
                         <div class="media-body">
                             <h5>{{__('automation')}}</h5>

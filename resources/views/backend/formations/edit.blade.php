@@ -90,6 +90,12 @@
                 <input type="text" name="description" class="form-control" placeholder="description" value="{{ $formation->description }}">
             </div>
         </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>{{__('image')}}:</strong>
+                <input type="file" name="image" id="inputGroupFile04" value="{{ $formation->getFirstMediaUrl('formation') }}">
+            </div>
+        </div>
         <div class="col-xs-8 col-sm-8 col-md-8 text-center">
             <button type="submit" class="btn btn-outline-success">{{__('update')}}</button>
         </div>

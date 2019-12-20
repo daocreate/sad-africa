@@ -63,6 +63,7 @@ class FormationController extends Controller
             'user_id' => 'required',
             'former_id' => 'required',
             'description' => 'required',
+            'image' => 'required'
         ]);
 
         //Populate model
@@ -114,6 +115,7 @@ class FormationController extends Controller
             'category_id' => 'required',
             'former_id' => 'required',
             'description' => 'required',
+            'image' => 'required'
         ]);
 
         $formation->update($request->all());
