@@ -54,4 +54,13 @@ class User extends Authenticatable implements HasMedia
             })->singleFile();
     }
 
+    public function formations(){
+        return $this->hasMany('App\User');
+    }
+    public function formation1(){
+        return  $this->belongsToMany('App\Formation', 'inscription');
+    }
+    public function inscriptions(){
+        return $this->hasMany('App\Inscription');
+    }
 }

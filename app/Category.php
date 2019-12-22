@@ -10,7 +10,7 @@ class Category extends Model
      * Get the categories for the page formation.
      */
     public function formations(){
-        return $this->hasMany(Formation::class); //'formation_id'
+        return $this->hasMany('App\Formation');
     }
 
     protected $fillable = [

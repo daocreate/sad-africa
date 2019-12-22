@@ -10,6 +10,6 @@ Route::get('check-translation', function(){
 });
 Route::group(['middleware' => ['role:learner']], function() {
     Route::get('/learner','LearnerController@index')->name("learner");
-    Route::get('/inscription','LearnerController@inscription')->name("inscription");
+    Route::post('/inscription','LearnerController@inscription')->name("inscription");
 
 });

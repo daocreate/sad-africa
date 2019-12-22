@@ -14,19 +14,19 @@ class Formation extends Model implements HasMedia
     /*
      * Search scope
      */
-    /*public function scopeSearch($query, $s){
+    public function scopeSearch($query, $s){
         return $query->where('category_id', 'like', '%' .$s. '%')
             ->orWhere('length', 'like', '%' .$s. '%')
             ->orWhere('label', 'like', '%' .$s. '%')
             ->orWhere('description', 'like', '%' .$s. '%');
-    }*/
+    }
 
     /**
      * Get the user that owns the formation.
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
     public function former()
     {
@@ -36,6 +36,10 @@ class Formation extends Model implements HasMedia
     {
         return $this->belongsTo('App\Category');
     }
+    public function inscriptions(){
+        return $this->hasMany('App\Inscription');
+    }
+
 
     /**
      * The attributes that are mass assignable.
@@ -52,6 +56,10 @@ class Formation extends Model implements HasMedia
             ->width(100)
             ->height(200)
             ->sharpen(10);
+    }
+
+    public function learners(){
+        return $this->belongsToMany('App\User', 'inscription');
     }
 
 }

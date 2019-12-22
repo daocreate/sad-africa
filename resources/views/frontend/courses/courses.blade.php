@@ -23,7 +23,11 @@
                                 <li><a href="#" style="color: #5BC01E"><i class="lnr lnr-user"></i> {{__('former')}} : {{ $formation->former->name }}</a></li>
                             </ul>
                             <p class="card-text float-right"><small class="text-muted ">{{ $formation->updated_at }}</small></p>
-                            <a class="main_btn" href="{{ route('learner') }}">{{ __('inscription') }}</a>
+                            <form action="{{ route('inscription', $formation->id) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="number" id="formation_id" name="formation_id" value="{{ $formation->id}}" hidden="true">
+                                <button type="submit" class="main_btn" > {{ __('inscription') }} </button>
+                            </form>
                         </div>
                     </div>
                 </div>

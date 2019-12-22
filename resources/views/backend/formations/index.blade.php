@@ -79,6 +79,8 @@
                     <th>{{__('code')}}</th>
                     <th>{{__('label')}}</th>
                     <th>{{__('length')}}</th>
+                    <th width="auto">{{__('Category')}}</th>
+                    <th>{{__('former')}}</th>
                     <th>{{__('description')}}</th>
                     <th>{{__('state')}}</th>
                     <th>{{__('Image')}}</th>
