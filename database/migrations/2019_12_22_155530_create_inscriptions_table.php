@@ -13,7 +13,7 @@ class CreateInscriptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('inscription', function (Blueprint $table) {
+        Schema::create('inscriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code')->nullable();;
             $table->integer('amount')->nullable();;

@@ -13,7 +13,7 @@ class CreateTranchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tranche', function (Blueprint $table) {
+        Schema::create('tranches', function (Blueprint $table) {
             $table->increments('id');
             $table->float('amount');
             $table->integer('inscription_id')->unsigned();
