@@ -96,7 +96,7 @@
                                         <li class="nav-item"><a class="nav-link" href="{{ route("backIndex") }}"><i class="fa-2x fa fa-lock"></i> {{__('backend')}}</a></li>
                                     @endif
                                     @if( auth()->user()->hasRole('learner'))
-                                        <li class="nav-item"><a class="nav-link" href="{{ route("learner") }}"><i class="fa-2x fa fa-lock"></i> {{__('dashboard')}}</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route("learner") }}"><i class="fa-2x fa-list"></i> {{__('dashboard')}}</a></li>
                                     @endif
                                     <li class="nav-item"><a class="nav-link" href="{{ route("logout1") }}"><i class="fa-2x fa fa-power-off"></i>  {{__('logout')}}</a></li>
                                 </ul>
