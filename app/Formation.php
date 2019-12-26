@@ -14,12 +14,12 @@ class Formation extends Model implements HasMedia
     /*
      * Search scope
      */
-    public function scopeSearch($query, $s){
+    /*public function scopeSearch($query, $s){
         return $query->where('category_id', 'like', '%' .$s. '%')
             ->orWhere('length', 'like', '%' .$s. '%')
             ->orWhere('label', 'like', '%' .$s. '%')
             ->orWhere('description', 'like', '%' .$s. '%');
-    }
+    }*/
 
     /**
      * Get the user that owns the formation.

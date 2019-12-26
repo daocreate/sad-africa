@@ -74,7 +74,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $formations->appends(['s' => $s])->links() }}
+            {{-- {{ $formations->appends(['s' => $s])->links() }}--}}
         </div>
     </div>
 @endsection

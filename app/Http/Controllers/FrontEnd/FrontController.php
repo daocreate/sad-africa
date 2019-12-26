@@ -64,11 +64,11 @@ class FrontController extends Controller
         }
         $calendar = \Calendar::addEvents($event);
 
-        $s = $request->input('s');
-        $formations = Formation::latest()
-        ->search($s)->paginate(7);
+        //$s = $request->input('s');
+        $formations = Formation::all();
+        //->search($s)->paginate(7);
         $categories = category::all();
-        return view('frontend.courses.courses_index', compact('formations', 'categories', 's', 'calendar'));
+        return view('frontend.courses.courses_index', compact('formations', 'categories', 'calendar')); //, 's'
     }
     
 }

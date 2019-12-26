@@ -21,6 +21,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+<script src="{{asset('adminlte/fullcalendar/fullcalendar.min.js')}}"></script>
+<script src="{{asset('adminlte/fullcalendar/moment.min.js')}}"></script>
 
 {{-- Data Table --}}
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
