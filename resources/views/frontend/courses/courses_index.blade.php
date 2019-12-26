@@ -15,7 +15,7 @@
                 <div class="row">
                     <form action="{{ route('course_list') }}" method="get" class="form-inline col-md-6">
                         <div class="form-group ">
-                            <select class="form-control " name="s" value="{{ isset($s) ? $s : ''}}">
+                            <select class="form-control " name="s" >
                                 <option value="">{{ __('all')}} {{ __('category')}}</option>
                                 @foreach($categories as $category)
                                     @if($category->state == 1)
@@ -62,6 +62,11 @@
                                         <a href="#" class="ml-3" style="color: #5BC01E"><i class="lnr lnr-user"></i> {{__('former')}} : {{ $formation->former->name }}</a>
                                     </div>
                                     <p class="card-text float-right"><small class="text-muted ">{{ $formation->updated_at }}</small></p>
+                                    <form action="{{ route('inscription', $formation->id) }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="number" id="formation_id" name="formation_id" value="{{ $formation->id}}" hidden="true">
+                                        <button type="submit" class="main_btn" > {{ __('inscription') }} </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

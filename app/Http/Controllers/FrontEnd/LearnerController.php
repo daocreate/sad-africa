@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Inscription;
-use App\User;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -31,7 +30,8 @@ class LearnerController extends Controller
         $inscription->learner_id = $lerner_id;
         $inscription->date_inscription = $now;
         $inscription->save();
-        return view('frontend.learner.dashboard')->with('success', 'Inscription réussit');
+        return redirect(route('learner'));
+        //return view('frontend.learner.dashboard')->with('success', 'Inscription réussit');
     }
 
 }

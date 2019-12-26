@@ -4,8 +4,8 @@
         <div class="container">
             <div class="float-left">
                 <ul class="list header_social">
-                    <li><a href="facebook.com/sad-africa" title="facebook" target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
-                    <li><a href="twiter.com/sad-africa" title="twiter" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>
+                    <li><a href="www.facebook.com/sad-africa" title="facebook" target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
+                    <li><a href="www.twiter.com/sad-africa" title="twiter" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>
                   <!--  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     <li><a href="#"><i class="fa fa-behance"></i></a></li>
                     -->
@@ -27,7 +27,7 @@
                     <ul class="navbar-nav ml-auto">
                         @php $locale = session()->get('locale'); @endphp
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 @switch($locale)
                                 @case('fr')
                                 <img src="{{asset('img/fr.png')}}" width="30px" height="20x"> Fr
@@ -91,14 +91,14 @@
                             </a>
                            {{-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>--}}
                                 <ul class="dropdown-menu">
-                                     <li class="nav-item"><a class="nav-link" href="{{ route("profile.show") }}"><i class="fa-2x fa fa-briefcase"></i> {{__('user_profile')}}</a></li>
+                                     <li class="nav-item"><a class="nav-link" href="{{ route("profile.show") }}"><i class="nav-icon fa fa-briefcase"></i> {{__('user_profile')}}</a></li>
                                     @if( auth()->user()->hasRole('admin') || auth()->user()->hasRole('manager'))
-                                        <li class="nav-item"><a class="nav-link" href="{{ route("backIndex") }}"><i class="fa-2x fa fa-lock"></i> {{__('backend')}}</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route("backIndex") }}"><i class="nav-icon fa fa-lock"></i> {{__('backend')}}</a></li>
                                     @endif
                                     @if( auth()->user()->hasRole('learner'))
-                                        <li class="nav-item"><a class="nav-link" href="{{ route("learner") }}"><i class="fa-2x fa-list"></i> {{__('dashboard')}}</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route("learner") }}"><i  class="nav-icon  fa fa-list"></i> {{__('dashboard')}}</a></li>
                                     @endif
-                                    <li class="nav-item"><a class="nav-link" href="{{ route("logout1") }}"><i class="fa-2x fa fa-power-off"></i>  {{__('logout')}}</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route("logout1") }}"><i class="nav-icon fa fa-power-off"></i>  {{__('logout')}}</a></li>
                                 </ul>
                             @else
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('login')}}</a>
