@@ -120,7 +120,7 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::find($id);
-        return view('BackEnd.events.edit', compact('event', 'id'));
+        return view('backend.events.edit', compact('event', 'id'));
     }
 
     /**

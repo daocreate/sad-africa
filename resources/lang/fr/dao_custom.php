@@ -90,5 +90,7 @@ return [
     "we_are_sorry"=> "Nous sommes désolé",
     "web_development"=> "Développement Web",
     "welcome"=> "Bienvenue",
-    "email_no_available" => "cette adresse mail n'est plus disponible"
+    "email_no_available" => "cette adresse mail n'est plus disponible",
+    "birth_date"=>"Date de Naissance",
+    "birth_place"=>"Lieu de Naissance"
 ];

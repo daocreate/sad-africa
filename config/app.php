@@ -65,7 +65,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    //'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'Africa/Douala'),
 
     /*
     |--------------------------------------------------------------------------
@@ -226,5 +227,6 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+        'AppHelper' => App\Http\Helpers\AppHelper::class,
     ],
 ];

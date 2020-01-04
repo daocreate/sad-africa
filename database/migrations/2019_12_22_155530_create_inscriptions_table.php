@@ -15,8 +15,8 @@ class CreateInscriptionsTable extends Migration
     {
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code')->nullable();;
-            $table->integer('amount')->nullable();;
+            $table->string('code')->nullable();
+            $table->integer('amount')->nullable();
             $table->dateTime('delay')->nullable();
             $table->dateTime('date_inscription');
             $table->integer('state')->default(1);

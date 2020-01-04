@@ -89,6 +89,8 @@ return [
     "we_are_sorry"=> "We are sorry",
     "web_development"=> "Web Development",
     "welcome"=> "Welcome",
-    "email_no_available" => "this email address is no longer available"
+    "email_no_available" => "this email address is no longer available",
+    "birth_date"=>"Birth date",
+    "birth_place"=>"Birth Place"
 
 ];
