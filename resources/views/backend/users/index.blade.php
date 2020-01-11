@@ -31,9 +31,13 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Birth Place</th>
+                        <th>Birth Date</th>
+                        <th>{{__('phone')}}</th>
+                        <th>{{__('gender')}}</th>
                         <th>Roles</th>
                         <th>{{__('state')}}</th>
-                        <th width="280px">Action</th>
+                        <th width="200px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +45,10 @@
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->birth_place }}</td>
+                        <td>{{ $user->birth_date }}</td>
+                        <td>{{ $user->phone_number }}</td>
+                        <td>{{ $user->gender }}</td>
                         <td>
                             @if(!empty($user->getRoleNames()))
                                 @foreach($user->getRoleNames() as $v)
@@ -50,8 +58,8 @@
                         </td>
                         <td>
                             <!-- todo: have problem in mobile device -->
-                            <input class="statusChange" type="checkbox" data-pk="{{$user->id}}" @if($user->state) checked @endif data-toggle="toggle" data-on="<i class='fa fa-check-circle'></i>" data-off="<i class='fa fa-ban'></i>" data-onstyle="success" data-offstyle="danger">
-                            <input data-id="{{$user->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $user->state ? 'checked' : '' }} >
+                            <input data-id="{{$user->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $user->status ? 'checked' : '' }}>
+                            <input type="checkbox" data-pk="{{$user->id}}" @if($user->state) checked @endif data-toggle="toggle" data-on="<i class='fa fa-check-circle'></i>" data-off="<i class='fa fa-ban'></i>" data-onstyle="success" data-offstyle="danger">
                         </td>
                         <td>
                             <a class="btn btn-info" href="{{ route('users.show',$user->id) }}" title="{{ __('show') }}"><i class="fa fa-eye"></i> </a>
@@ -80,6 +88,24 @@
         $(document).ready( function () {
             $('#myTab').DataTable()
         });
+    </script>
+    <script>
+        $(function() {
+            $('.toggle-class').change(function() {
+                var status = $(this).prop('checked') == true ? 1 : 0;
+                var user_id = $(this).data('id');
+
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: '/changeStatus',
+                    data: {'status': status, 'user_id': user_id},
+                    success: function(data){
+                        console.log(data.success)
+                    }
+                });
+            })
+        })
     </script>
 @endsection
 

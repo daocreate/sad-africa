@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="col-xs-8 col-sm-8 col-md-8 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{{__('send')}}</button>
         </div>
     </div>
     {!! Form::close() !!}

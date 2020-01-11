@@ -12,6 +12,11 @@
 
 <!-- Main CSS-->
 <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
+{{-- toggle checkbox--}}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"  />
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
 
 
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AvatarController extends Controller
 {
@@ -17,8 +19,10 @@ class AvatarController extends Controller
      */
     public function index()
     {
+        $gender = 1;
         $avatars = auth()->user()->getMedia('avatar');
-        return view('frontend.profile', compact('avatars') ,['user' => auth()->user()] );
+        //$user = User::find(auth()->user()->getAuthIdentifier());
+        return view('frontend.profile', compact('avatars', 'gender') ,['user' => auth()->user()] );
     }
 
     /**
@@ -39,9 +43,30 @@ class AvatarController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'phone_number' => 'required|min:9|numeric',
+            'birth_date' => 'required',
+            'gender' => 'required',
+            'avatar'=> 'required',
+            'birth_place' => 'required'
+        ]);
+
         $user = auth()->user();
+
+        $user->name = request()->input('name');
+        $user->phone_number = request()->input('phone_number');
+        $user->birth_date = request()->input('birth_date');
+        $user->gender = request()->input('gender');
+        $user->birth_place = $request->input('birth_place');
+        //$user->password = bcrypt($request['password']);
+        $user->save();
+
+
         $user->addMedia($request->avatar)->toMediaCollection('avatar');
-        return redirect()->back();
+
+
+        return redirect()->back()->with('success', 'update successfully');
     }
 
     /**

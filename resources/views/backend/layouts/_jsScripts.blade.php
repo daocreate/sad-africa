@@ -19,6 +19,9 @@
 <script src="{{ asset('admin/js/main.js') }}"></script>
 {{-- bootstrap switch--}}
 <script src="{{ asset('admin/vendor/bootstrap-switch/js/bootstrap-switch.js') }}" type="text/javascript"></script>
+{{-- toggle checkbox--}}
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
 
 <script>
     $(document).ready( function () {
