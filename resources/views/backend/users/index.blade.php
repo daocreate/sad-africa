@@ -37,7 +37,9 @@
                         <th>{{__('gender')}}</th>
                         <th>Roles</th>
                         <th>{{__('state')}}</th>
+                        <th >{{__('global.create')}}</th>
                         <th width="200px">Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +51,7 @@
                         <td>{{ $user->birth_date }}</td>
                         <td>{{ $user->phone_number }}</td>
                         <td>{{ $user->gender }}</td>
+
                         <td>
                             @if(!empty($user->getRoleNames()))
                                 @foreach($user->getRoleNames() as $v)
@@ -57,10 +60,11 @@
                             @endif
                         </td>
                         <td>
+                            {{--<input data-id="{{$user->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $user->state ? 'checked' : '' }}>--}}
                             <!-- todo: have problem in mobile device -->
-                            <input data-id="{{$user->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $user->status ? 'checked' : '' }}>
-                            <input type="checkbox" data-pk="{{$user->id}}" @if($user->state) checked @endif data-toggle="toggle" data-on="<i class='fa fa-check-circle'></i>" data-off="<i class='fa fa-ban'></i>" data-onstyle="success" data-offstyle="danger">
+                                <input class="statusChange" id="statusChange" type="checkbox" data-pk="{{$user->id}}" @if($user->state) checked @endif data-toggle="toggle" data-on="<i class='fa fa-check-circle'></i>" data-off="<i class='fa fa-ban'></i>" data-onstyle="success" data-offstyle="danger">
                         </td>
+                        <td>{{ $user->created_at->diffForHumans() }}</td>
                         <td>
                             <a class="btn btn-info" href="{{ route('users.show',$user->id) }}" title="{{ __('show') }}"><i class="fa fa-eye"></i> </a>
                             @hasrole('admin')
@@ -85,27 +89,33 @@
 @endsection
 @section('js')
     <script>
-        $(document).ready( function () {
-            $('#myTab').DataTable()
-        });
-    </script>
-    <script>
         $(function() {
-            $('.toggle-class').change(function() {
-                var status = $(this).prop('checked') == true ? 1 : 0;
+            $('#statusChange').change(function() {
+                var state = $(this).prop('checked') == true ? 1 : 0;
                 var user_id = $(this).data('id');
+                alert(state);
 
                 $.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: '/changeStatus',
-                    data: {'status': status, 'user_id': user_id},
+                    url: '/users.changeStatus',
+                    data: {'state': state, 'user_id': user_id},
                     success: function(data){
-                        console.log(data.success)
+                        console.log(data.success);
+                        toastr.options.closeButton = true;
+                        toastr.options.closeMethod = 'fadeOut';
+                        toastr.options.closeDuration = 100;
+                        toastr.success(data.message);
                     }
                 });
             })
         })
     </script>
+    <script>
+        $(document).ready( function () {
+            $('#myTab').DataTable()
+        });
+    </script>
+
 @endsection
 

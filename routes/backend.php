@@ -1,6 +1,8 @@
 <?php
 
 Route::group(['middleware' => ['role:admin|manager']], function() {
+    Route::get('changeStatus', 'UserController@ChangeUserStatus')->name('changeStatus');
+    Route::post('changeStatus', 'UserController@ChangeUserStatus')->name('changeStatus');
     Route::resource('roles','RoleController');
     Route::resource('users','UserController');
     Route::resource('formations','FormationController');
@@ -9,6 +11,7 @@ Route::group(['middleware' => ['role:admin|manager']], function() {
     /* Events route */
     Route::resource('events', 'EventController');
     Route::resource('categories', 'CategoryController');
+
 });
 
 Route::get('/admin','BackEndController@index')->middleware('auth')->name("backIndex");

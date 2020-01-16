@@ -17,33 +17,10 @@
 <script src="{{ asset('admin/vendor/select2/select2.min.js') }}"></script>
 <!-- Main JS-->
 <script src="{{ asset('admin/js/main.js') }}"></script>
-{{-- bootstrap switch--}}
-<script src="{{ asset('admin/vendor/bootstrap-switch/js/bootstrap-switch.js') }}" type="text/javascript"></script>
-{{-- toggle checkbox--}}
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+
 
 <script>
     $(document).ready( function () {
         $('#myTab').DataTable()
     });
-</script>
-{{-- Script to change user state--}}
-<script>
-    $(function() {
-        $('.toggle-class').change(function() {
-            var state = $(this).prop('checked') == true ? 1 : 0;
-            var user_id = $(this).data('id');
-
-            $.ajax({
-                type: "GET",
-                dataType: "json",
-                url: '/changeStatus',
-                data: {'state': state, 'user_id': user_id},
-                success: function(data){
-                    console.log(data.success)
-                }
-            });
-        })
-    })
 </script>

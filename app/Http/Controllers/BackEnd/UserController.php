@@ -21,12 +21,12 @@ class UserController extends Controller
      */
     public function changeStatus(Request $request)
     {
-        $user = User::find($request->user_id);
+        $user = User::findOrFail($request->user_id);
         $user->state = $request->state;
         $user->save();
-
         return response()->json(['success'=>'Status change successfully.']);
     }
+
     public function index(Request $request)
     {
         $data = User::orderBy('id','DESC')->get();
